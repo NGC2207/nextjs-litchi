@@ -5,17 +5,26 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { locales } from "@/i18n/config";
+import { useTranslations } from "next-intl";
+import { getLocale } from "next-intl/server";
 
-export function IntlToggle() {
+export async function IntlToggle() {
+  const t = useTranslations("IntlToggle");
+  const locale = await getLocale();
   return (
     <Select>
       <SelectTrigger>
-        <SelectValue placeholder="language" />
+        <SelectValue
+          placeholder={`${t(`${locale}.flag`)} ${t(`${locale}.name`)}`}
+        />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="en">English</SelectItem>
-        <SelectItem value="zh-CN">Chinese Simple</SelectItem>
-        <SelectItem value="zh-TW">Chinses Traditional</SelectItem>
+        {locales.map((locale) => (
+          <SelectItem key={locale} value={locale}>
+            {t(`${locale}.flag`)} {t(`${locale}.name`)}
+          </SelectItem>
+        ))}
       </SelectContent>
     </Select>
   );
