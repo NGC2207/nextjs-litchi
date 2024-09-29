@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { Container } from "@/components/container";
+import { IntlToggle } from "@/components/intl-toggle";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Header() {
@@ -14,6 +15,7 @@ export function Header() {
             </Link>
           </div>
           <div className="flex items-center gap-6">
+            <IntlToggle />
             <ThemeToggle />
           </div>
         </Container>
