@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { IntlProvider } from "@/providers/intl-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { LayoutProvider } from "@/providers/layout-provider";
 
@@ -19,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider>
-          <LayoutProvider>{children}</LayoutProvider>
-        </ThemeProvider>
+        <IntlProvider>
+          <ThemeProvider>
+            <LayoutProvider>{children}</LayoutProvider>
+          </ThemeProvider>
+        </IntlProvider>
       </body>
     </html>
   );
