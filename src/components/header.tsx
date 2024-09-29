@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { Container } from "@/components/container";
-import { Button } from "./ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Header() {
   return (
@@ -14,7 +14,7 @@ export function Header() {
             </Link>
           </div>
           <div className="flex items-center gap-6">
-            <Button>Test</Button>
+            <ThemeToggle />
           </div>
         </Container>
       </nav>
