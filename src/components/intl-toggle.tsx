@@ -10,6 +10,7 @@ import {
 import { useState, useMemo } from "react";
 import { useTranslations } from "next-intl";
 import { Locale, locales } from "@/i18n/config";
+import { setUserLocale } from "@/services/locale";
 
 interface IntlToggleProps {
   userLocale: Locale;
@@ -22,15 +23,17 @@ export function IntlToggle({ userLocale }: IntlToggleProps) {
   const localeOptions = useMemo(() => {
     return locales.map((locale) => ({
       value: locale,
-      label: `${t(`${locale}.flag`)} ${t(`${locale}.name`)}`
+      label: `${t(`${locale}.flag`)} ${t(`${locale}.name`)}`,
     }));
   }, [t]);
 
+  const handleValueChange = (value: Locale) => {
+    setSelectedOption(value);
+    setUserLocale(value);
+  };
+
   return (
-    <Select
-      value={selectedOption}
-      onValueChange={(value: Locale) => setSelectedOption(value)}
-    >
+    <Select value={selectedOption} onValueChange={handleValueChange}>
       <SelectTrigger className="w-[205px]">
         <SelectValue />
       </SelectTrigger>
