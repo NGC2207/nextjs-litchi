@@ -1,10 +1,14 @@
 import Link from "next/link";
+import { Locale } from "@/i18n/config";
 import { Logo } from "@/components/logo";
+import { getUserLocale } from "@/services/locale";
 import { Container } from "@/components/container";
 import { IntlToggle } from "@/components/intl-toggle";
 import { ThemeToggle } from "@/components/theme-toggle";
 
-export function Header() {
+export async function Header() {
+  const userLocale = await getUserLocale();
+
   return (
     <header>
       <nav>
@@ -15,7 +19,7 @@ export function Header() {
             </Link>
           </div>
           <div className="flex items-center gap-6">
-            <IntlToggle />
+            <IntlToggle userLocale={userLocale as Locale} />
             <ThemeToggle />
           </div>
         </Container>

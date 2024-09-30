@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Select,
   SelectContent,
@@ -5,24 +7,37 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { locales } from "@/i18n/config";
+import { useState, useMemo } from "react";
 import { useTranslations } from "next-intl";
-import { getLocale } from "next-intl/server";
+import { Locale, locales } from "@/i18n/config";
 
-export async function IntlToggle() {
+interface IntlToggleProps {
+  userLocale: Locale;
+}
+
+export function IntlToggle({ userLocale }: IntlToggleProps) {
   const t = useTranslations("IntlToggle");
-  const locale = await getLocale();
+  const [selectedOption, setSelectedOption] = useState<Locale>(userLocale);
+
+  const localeOptions = useMemo(() => {
+    return locales.map((locale) => ({
+      value: locale,
+      label: `${t(`${locale}.flag`)} ${t(`${locale}.name`)}`
+    }));
+  }, [t]);
+
   return (
-    <Select>
-      <SelectTrigger>
-        <SelectValue
-          placeholder={`${t(`${locale}.flag`)} ${t(`${locale}.name`)}`}
-        />
+    <Select
+      value={selectedOption}
+      onValueChange={(value: Locale) => setSelectedOption(value)}
+    >
+      <SelectTrigger className="w-[205px]">
+        <SelectValue />
       </SelectTrigger>
-      <SelectContent>
-        {locales.map((locale) => (
-          <SelectItem key={locale} value={locale}>
-            {t(`${locale}.flag`)} {t(`${locale}.name`)}
+      <SelectContent className="w-[205px]">
+        {localeOptions.map((option) => (
+          <SelectItem key={option.value} value={option.value}>
+            {option.label}
           </SelectItem>
         ))}
       </SelectContent>
