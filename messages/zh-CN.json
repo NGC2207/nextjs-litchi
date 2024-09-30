@@ -2,7 +2,12 @@
   "HomePage": {
     "MainView": {
       "title": "大学生专属代码乐园",
-      "description": "一站式助力编程学习与教学："
+      "description": "一站式助力编程学习与教学：",
+      "features": {
+        "feature1": "在线评估工具，助力精准决策与提升。",
+        "feature2": "免费云服务器，助您轻松启动与扩展。",
+        "feature3": "网页开发环境，随时随地编写代码。"
+      }
     }
   },
   "IntlToggle": {

@@ -2,7 +2,12 @@
   "HomePage": {
     "MainView": {
       "title": "A Playground for College Students to Explore Open Source Code",
-      "description": "All in one place to support coding learning and teaching:"
+      "description": "All in one place to support coding learning and teaching:",
+      "features": {
+        "feature1": "Online assessment tools for precise decision-making and improvement.",
+        "feature2": "Free cloud servers to effortlessly launch and scale your projects.",
+        "feature3": "Web development environments for coding anytime, anywhere."
+      }
     }
   },
   "IntlToggle": {

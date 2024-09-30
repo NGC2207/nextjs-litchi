@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/container";
+import { TypingEffect } from "@/components/typing-effect";
 
 export function MainView() {
   const t = useTranslations("HomePage.MainView");
@@ -11,7 +12,12 @@ export function MainView() {
             <h1 className="text-4xl font-medium tracking-tight">
               {t("title")}
             </h1>
-            <p className="mt-6 text-lg text-foreground/50">{t("description")}</p>
+            <p className="mt-6 text-lg text-foreground/75">
+              {t("description")}
+            </p>
+            <div className="mt-6 text-lg text-foreground/50">
+              <TypingEffect />
+            </div>
           </div>
         </div>
       </Container>
