@@ -21,10 +21,11 @@ export function IntlToggle({ userLocale }: IntlToggleProps) {
   const [selectedOption, setSelectedOption] = useState<Locale>(userLocale);
 
   const localeOptions = useMemo(() => {
-    return locales.map((locale) => ({
+    const options = locales.map((locale) => ({
       value: locale,
       label: `${t(`${locale}.flag`)} ${t(`${locale}.name`)}`,
     }));
+    return options.sort((a, b) => a.value.localeCompare(b.value));
   }, [t]);
 
   const handleValueChange = (value: Locale) => {
