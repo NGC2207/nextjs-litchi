@@ -20,8 +20,12 @@ export function MainView() {
               <TypingEffect />
             </div>
             <div className="not-prose mb-16 mt-6 flex gap-3">
-              <Button size="sm" className="rounded-2xl">{t("quickStart")}</Button>
-              <Button variant="secondary" size="sm" className="rounded-2xl">{t("contactUs")}</Button>
+              <Button size="sm" className="rounded-2xl">
+                {t("quickStart")}
+              </Button>
+              <Button variant="secondary" size="sm" className="rounded-2xl">
+                {t("contactUs")}
+              </Button>
             </div>
           </div>
         </div>

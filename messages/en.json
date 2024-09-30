@@ -10,6 +10,18 @@
       },
       "quickStart": "Quickstart",
       "contactUs": "Contact Us"
+    },
+    "FAQs": {
+      "title": "FAQs",
+      "description": "Can't find what you need? Please contact us immediately!",
+      "questions": {
+        "question1": "How to quickly apply for a cloud server?",
+        "answer1": "Click 'Start Now' to register and apply for your dedicated cloud server.",
+        "question2": "How can I experience a cloud server for free?",
+        "answer2": "Ensure your school is on the supported list and complete student verification to use for free.",
+        "question3": "Can I still use it for free if I'm not a student or my school isn't supported?",
+        "answer3": "New users get a one-month free trial, but service and data will be reclaimed if renewal fails."
+      }
     }
   },
   "IntlToggle": {
