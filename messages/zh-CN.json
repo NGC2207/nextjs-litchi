@@ -1,6 +1,9 @@
 {
   "HomePage": {
-    "welcome": "欢迎来到主页！"
+    "MainView": {
+      "title": "大学生专属代码乐园",
+      "description": "一站式助力编程学习与教学："
+    }
   },
   "IntlToggle": {
     "en": {

@@ -1,6 +1,9 @@
 {
   "HomePage": {
-    "welcome": "Welcome to the homepage!"
+    "MainView": {
+      "title": "A Playground for College Students to Explore Open Source Code",
+      "description": "All in one place to support coding learning and teaching:"
+    }
   },
   "IntlToggle": {
     "en": {
