@@ -1,5 +1,19 @@
 {
   "HomePage": {
     "welcome": "Welcome to the homepage!"
+  },
+  "IntlToggle": {
+    "en": {
+      "flag": "🇺🇸",
+      "name": "English"
+    },
+    "zh-CN": {
+      "flag": "🇨🇳",
+      "name": "Chinese(Simplified)"
+    },
+    "zh-TW": {
+      "flag": "🇨🇳",
+      "name": "Chinese(Traditional)"
+    }
   }
 }
