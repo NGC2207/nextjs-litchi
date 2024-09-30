@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 
 export function LayoutProvider({ children }: { children: React.ReactNode }) {
@@ -5,6 +6,7 @@ export function LayoutProvider({ children }: { children: React.ReactNode }) {
     <>
       <Header />
       <main className="flex-auto">{children}</main>
+      <Footer/>
     </>
   );
 }
