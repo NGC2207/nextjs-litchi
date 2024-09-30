@@ -7,7 +7,9 @@
         "feature1": "線上評估工具，助力精準決策與提升。",
         "feature2": "免費雲伺服器，助您輕鬆啟動與擴展。",
         "feature3": "網頁開發環境，隨時隨地編寫代碼。"
-      }
+      },
+      "quickStart": "即刻啟程",
+      "contactUs": "聯繫我們"
     }
   },
   "IntlToggle": {

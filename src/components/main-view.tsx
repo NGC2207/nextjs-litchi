@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { Button } from "@/components/ui/button";
 import { Container } from "@/components/container";
 import { TypingEffect } from "@/components/typing-effect";
 
@@ -17,6 +18,10 @@ export function MainView() {
             </p>
             <div className="mt-6 text-lg text-foreground/50">
               <TypingEffect />
+            </div>
+            <div className="not-prose mb-16 mt-6 flex gap-3">
+              <Button size="sm" className="rounded-2xl">{t("quickStart")}</Button>
+              <Button variant="secondary" size="sm" className="rounded-2xl">{t("contactUs")}</Button>
             </div>
           </div>
         </div>
