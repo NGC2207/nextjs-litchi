@@ -1,6 +1,16 @@
 {
   "HomePage": {
-    "welcome": "Welcome to the homepage!"
+    "MainView": {
+      "title": "A coding paradise exclusively for college students",
+      "description": "All in one place to support coding learning and teaching:",
+      "features": {
+        "feature1": "Online assessment tools for precise decision-making and improvement.",
+        "feature2": "Free cloud servers to effortlessly launch and scale your projects.",
+        "feature3": "Web development environments for coding anytime, anywhere."
+      },
+      "quickStart": "Quickstart",
+      "contactUs": "Contact Us"
+    }
   },
   "IntlToggle": {
     "en": {

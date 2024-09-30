@@ -1,6 +1,9 @@
-import { useTranslations } from "next-intl";
+import { MainView } from "@/components/main-view";
 
 export default function Home() {
-  const t = useTranslations("HomePage");
-  return <div>{t("welcome")}</div>;
+  return (
+    <>
+      <MainView />
+    </>
+  );
 }
