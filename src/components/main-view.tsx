@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
@@ -21,8 +22,8 @@ export function MainView() {
               <TypingEffect />
             </div>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
-              <Button size="sm" className="rounded-2xl">
-                {t("quickStart")}
+              <Button size="sm" className="rounded-2xl" asChild>
+                <Link href="/dashboard">{t("quickStart")}</Link>
               </Button>
               <Button variant="secondary" size="sm" className="rounded-2xl">
                 {t("contactUs")}
