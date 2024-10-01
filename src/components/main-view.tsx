@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/container";
@@ -6,7 +7,7 @@ import { TypingEffect } from "@/components/typing-effect";
 export function MainView() {
   const t = useTranslations("HomePage.MainView");
   return (
-    <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36">
+    <div className="overflow-hidden py-10 sm:py-16 lg:pb-16 xl:pb-18">
       <Container>
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
@@ -19,13 +20,25 @@ export function MainView() {
             <div className="mt-6 text-lg text-foreground/50">
               <TypingEffect />
             </div>
-            <div className="not-prose mb-16 mt-6 flex gap-3">
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
               <Button size="sm" className="rounded-2xl">
                 {t("quickStart")}
               </Button>
               <Button variant="secondary" size="sm" className="rounded-2xl">
                 {t("contactUs")}
               </Button>
+            </div>
+          </div>
+          <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
+            <div>
+              <Image
+                src="/background.png"
+                alt={""}
+                width={2275}
+                height={1280}
+                className="rounded-2xl"
+                priority
+              />
             </div>
           </div>
         </div>
