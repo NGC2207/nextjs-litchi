@@ -37,5 +37,13 @@
       "flag": "🇨🇳",
       "name": "Chinese(Traditional)"
     }
+  },
+  "DashboardPage": {
+    "NavBar": {
+      "dashboard": "Dashboard",
+      "cloudServer": "Cloud Server",
+      "webIDE": "Web IDE",
+      "settings": "Settings"
+    }
   }
 }
