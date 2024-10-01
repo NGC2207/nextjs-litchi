@@ -37,5 +37,13 @@
       "flag": "🇨🇳",
       "name": "繁體中文"
     }
+  },
+  "DashboardPage": {
+    "NavBar": {
+      "dashboard": "控制台",
+      "cloudServer": "雲服務器",
+      "webIDE": "網頁IDE",
+      "settings": "設置"
+    }
   }
 }
