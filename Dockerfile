@@ -4,23 +4,11 @@ FROM node:18-alpine
 # 设置工作目录
 WORKDIR /app
 
-# 安装 bash 和 curl
-RUN apk add --no-cache bash curl
-
-# 安装 bun
-RUN curl -fsSL https://bun.sh/install | bash -s -- bun-v0.6.6 && \
-    echo 'export BUN_INSTALL="/root/.bun"' >> ~/.bashrc && \
-    echo 'export PATH="$BUN_INSTALL/bin:$PATH"' >> ~/.bashrc
-
-# 设置环境变量
-ENV BUN_INSTALL="/root/.bun"
-ENV PATH="$BUN_INSTALL/bin:$PATH"
-
 # 复制 package.json 和 package-lock.json
 COPY package*.json ./
 
 # 安装项目依赖
-RUN bash -c "bun install && rm -rf /root/.bun/cache"
+RUN npm install
 
 # 复制所有必要的文件和文件夹
 COPY src/ ./src/
@@ -33,10 +21,10 @@ COPY tailwind.config.ts ./
 COPY tsconfig.json ./
 
 # 构建 Next.js 项目
-RUN bash -c "bun run build"
+RUN npm run build
 
 # 暴露端口
 EXPOSE 3000
 
 # 启动应用
-CMD ["bun", "start"]
+CMD ["npm", "start"]
