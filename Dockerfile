@@ -8,10 +8,13 @@ WORKDIR /app
 RUN apk add --no-cache bash curl
 
 # 安装 bun
-RUN curl -fsSL https://bun.sh/install | bash
+RUN curl -fsSL https://bun.sh/install | bash && \
+    echo 'export BUN_INSTALL="$HOME/.bun"' >> ~/.bashrc && \
+    echo 'export PATH="$BUN_INSTALL/bin:$PATH"' >> ~/.bashrc
 
 # 设置环境变量
-ENV PATH="/root/.bun/bin:${PATH}"
+ENV BUN_INSTALL="/root/.bun"
+ENV PATH="$BUN_INSTALL/bin:$PATH"
 
 # 复制 package.json 和 package-lock.json
 COPY package*.json ./
