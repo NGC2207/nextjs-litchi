@@ -1,0 +1,9 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
+  "/(main)/dashboard/page": "app/(main)/dashboard/page.js",
+  "/(main)/dashboard/settings/page": "app/(main)/dashboard/settings/page.js",
+  "/(main)/dashboard/webide/page": "app/(main)/dashboard/webide/page.js",
+  "/(main)/dashboard/cloudserver/page": "app/(main)/dashboard/cloudserver/page.js"
+}
