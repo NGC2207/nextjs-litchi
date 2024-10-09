@@ -20,8 +20,7 @@ ENV PATH="$BUN_INSTALL/bin:$PATH"
 COPY package*.json ./
 
 # 安装项目依赖
-RUN bun install && \
-    rm -rf /root/.bun/cache
+RUN bash -c "bun install && rm -rf /root/.bun/cache"
 
 # 复制所有必要的文件和文件夹
 COPY src/ ./src/
@@ -34,7 +33,7 @@ COPY tailwind.config.ts ./
 COPY tsconfig.json ./
 
 # 构建 Next.js 项目
-RUN bun run build
+RUN bash -c "bun run build"
 
 # 暴露端口
 EXPOSE 3000
