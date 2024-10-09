@@ -4,9 +4,11 @@ FROM node:18-alpine
 # 设置工作目录
 WORKDIR /app
 
+# 安装 bash 和 curl
+RUN apk add --no-cache bash curl
+
 # 安装 bun
-RUN apk add --no-cache curl && \
-    curl -fsSL https://bun.sh/install | bash
+RUN curl -fsSL https://bun.sh/install | bash
 
 # 设置环境变量
 ENV PATH="/root/.bun/bin:${PATH}"
