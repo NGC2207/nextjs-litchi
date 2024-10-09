@@ -1,8 +1,5 @@
-name: package next.js project
+name: package next.js project and push to docker
 on: push
-
-permissions:
-  contents: write
 
 jobs:
   bun-build:
@@ -13,19 +10,14 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v4
 
-      - name: install bun
-        run: |
-          curl -fsSL https://bun.sh/install | bash
-          echo "BUN_INSTALL=$HOME/.bun" >> $GITHUB_ENV
-          echo "PATH=$HOME/.bun/bin:$PATH" >> $GITHUB_ENV
-
-      - name: install dependencies and package project
-        run: |
-          bun install
-          bun run build
-
-      - name: deploy to github pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: login in Dockerhub
+        uses: docker/login-action@v3
         with:
-          branch: gh-pages
-          folder: out
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      - name: build and push to dockerhub
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          tags: ngc2207/nextjs-litchi:latest
