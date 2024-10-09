@@ -32,7 +32,7 @@ export function TypingEffect() {
     const timer = setTimeout(handleTyping, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [displayText, isDeleting, index]);
+  }, [displayText, isDeleting, index, texts]);
 
   return (
     <motion.div
