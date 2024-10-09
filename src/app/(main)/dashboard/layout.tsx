@@ -11,12 +11,12 @@ export default function DashboardLayout({
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
-    <div>
+    <div className="flex h-screen">
       <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-      <div className="lg:pl-72">
+      <div className="flex flex-col flex-1 lg:pl-72">
         <Header setSidebarOpen={setSidebarOpen} />
-        <main className="py-10">
-          <div className="px-4 sm:px-6 lg:px-8">{children}</div>
+        <main className="flex-1">
+          <div className="h-full">{children}</div>
         </main>
       </div>
     </div>

@@ -1,9 +1,33 @@
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Cloud,
+  CreditCard,
+  Github,
+  Keyboard,
+  LifeBuoy,
+  LogOut,
+  Mail,
+  MessageSquare,
+  Plus,
+  PlusCircle,
+  Settings,
+  User,
+  UserPlus,
+  Users,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -30,20 +54,17 @@ const UserMenu = React.memo(() => (
         </Avatar>
       </Button>
     </DropdownMenuTrigger>
-    <DropdownMenuContent
-      align="end"
-      className="w-32 mt-2.5 origin-top-right rounded-md py-2 shadow-lg ring-1 ring-foreground/25 transition focus:outline-none data-[state=closed]:scale-95 data-[state=closed]:transform data-[state=closed]:opacity-0 data-[state=open]:duration-100 data-[state=closed]:duration-75 data-[state=open]:ease-out data-[state=closed]:ease-in"
-    >
-      {userNavigation.map((item) => (
-        <DropdownMenuItem key={item.name}>
-          <a
-            href={item.href}
-            className="block px-3 py-1 text-sm leading-6 text-foreground data-[state=open]:bg-foreground/25"
-          >
-            {item.name}
-          </a>
+    <DropdownMenuContent>
+      <DropdownMenuGroup>
+        <DropdownMenuItem>
+          <User className="mr-2 h-4 w-4" />
+          <span>Profile</span>
         </DropdownMenuItem>
-      ))}
+        <DropdownMenuItem>
+          <LogOut className="mr-2 h-4 w-4" />
+          <span>Log out</span>
+        </DropdownMenuItem>
+      </DropdownMenuGroup>
     </DropdownMenuContent>
   </DropdownMenu>
 ));

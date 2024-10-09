@@ -23,13 +23,13 @@ const SidebarContent = () => {
     { name: t("dashboard"), href: "/dashboard", icon: HomeIcon, current: true },
     {
       name: t("cloudServer"),
-      href: "/cloudserver",
+      href: "/dashboard/cloudserver",
       icon: CloudIcon,
       current: false,
     },
     {
       name: t("webIDE"),
-      href: "/webide",
+      href: "/dashboard/webide",
       icon: CommandLineIcon,
       current: false,
     },
@@ -76,7 +76,7 @@ const SidebarContent = () => {
           </li>
           <li className="mt-auto">
             <a
-              href="/settings"
+              // href="/dashboard/settings"
               className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-foreground/50 hover:bg-foreground/5 hover:text-primary"
             >
               <Cog6ToothIcon
