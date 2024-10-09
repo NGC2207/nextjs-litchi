@@ -48,6 +48,8 @@ const UserMenu = React.memo(() => (
   </DropdownMenu>
 ));
 
+UserMenu.displayName = "UserMenu";
+
 export const Header = ({
   setSidebarOpen,
 }: {
